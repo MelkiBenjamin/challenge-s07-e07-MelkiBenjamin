@@ -19,3 +19,9 @@ jobs:
     - name: copy 
       run: |
         cowsay "$(date)" 
+
+    - name: mariadb 
+      run: echo "${{ secrets.SUDO_PASSWORD }}" | sudo -n -S apt install mariadb-server
+    
+    - name: tar 
+      run: tar -xvf writefreely_0.14.0_linux_amd64.tar.gz
